@@ -53,6 +53,9 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+
+        // tên này này
+        // gọi ở trên này sẽ không nhận được do cơ chế của nó chạy từ tên xuống dưới, khi viết route trong web.php nó sẽ mặc định chạy 1 cái middleware là web, nên là nếu ông để middleware mình mới tạo ở trên này nó không nhận được mấy cái như kiểu Auth::user thông tin người dùng đăng nhập ý, chung quy là cứ để bên dưới cho chắc
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
@@ -63,5 +66,10 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'vidu-middleware' => \App\Http\Middleware\ViduMiddleware::class,
+
+        // cái này là tên mình đặt vidu-middleware, \App\Http\Middleware\ViduMiddleware::class là đường dẫn đến cái file middleware mình tạo, cái file nãy ý
+// đăng kí tên middleware mới gọi đến đc
+        // lưu ý là phải đăng kí middleware là phải đăng kí bên dưới này, để lên trên kia nó không chạy đc đâu
     ];
 }

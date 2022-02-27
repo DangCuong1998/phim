@@ -16,3 +16,55 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',"HomeController@index")->name('home');
+// đây là trang chủ ông
+
+
+// bây giờ tôi sẽ tạo ra 1 cái form để đăng kí tài khoản
+Route::get('/register',"LoginController@getRegister");
+// ông nên để đường dẫn mấy cái dduwwofng dẫn post form đơn giản chung đường dẫn get cho nó dễ
+Route::post('/register',"LoginController@postRegister");
+// x chua ong
+// toi ghi cmd sai nen no loi
+// toàn dùng group nên quên mất cách gọi này
+// uk chứ sau nó dùng cái kiểu này đâu
+// ak thiếu chữ e
+// hiện tại tôi đang vào trang admin, middlware trang này chặn lại và kiểm tra tôi không phải admin nên ko cho vào
+
+// ông khong hiểu đoạn nào để tôi giải thích, ông nói lại đi mic tự dưng bé
+// đây mới là admin
+Route::get('/admin',"TenDemoController@tenFunction")->middleware('vidu-middleware');
+
+// ở đây tôi gọi đến cái file controller có casiclass là TenDemoController bên trong file app/http/controller; sau đó gọi đến function có tên là tenFunction// ukm
+// Route::get('/home',function()
+// {
+// 	return "a";
+// })->middleware('vidu-middleware');
+// cái cũ là như này
+
+// khi mà chạy đến cái /home này như nãy là nó chạy 1 cái function return "a";
+// bây giờ tôi sẽ vứt cái return "a" vào 1 cái file để cho nó đẹp mặt tiện quản lý hơn
+
+
+// thay cái function này thành tên controller@  + tên function trong controller đó
+// giờ là đến liên kết vs controller
+// lệnh tạo controller là php artisan make:controller Ten controller
+//  tạo 1 cái file controller có cấu trúc CRUD sẵ thì sử dụng -- resource 
+// ông lag r ak
+// chạy thử xem lỗi j ko
+// qua đây gọi đến cái tên ấy
+
+// đang làm demo mà ông,
+// sau khi đăng kí middleware thì khai báo middleware trong file Kernel.php ở app/Http
+// đăng kí ở trong cái biến này routeMiddleware
+// cách dùng cơ bản là như này
+// thôi kệ để v cho ông nhìn
+
+
+// giờ làm middlware luôn nhé
+// midđlewảe tác dụng là chặn đường dẫn đấy lại để kiểm tra xem có đủ yêu cầu truy cập không
+// um
+// file midd thì nằm trong app/htpp/middlware
+// lệnh tạo middleware là php artisan make:middleware  tên middlware
+
+
+// ukm 
