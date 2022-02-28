@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',"HomeController@index")->name('home');
+Route::get('detail','DetailController@detailview');
+Route::get('index','IndexController@indexview');
+Route::get('phimchieurap','Phimchieurapcontroller@phimchieurapview');
+Route::get('admin','AdminController@adminview')->middleware('Demoadmin');
