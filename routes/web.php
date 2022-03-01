@@ -16,13 +16,28 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',"HomeController@index")->name('home');
-// đây là trang chủ ông
 
+
+Route::get('/login','LoginController@getLogin')->name('login');
+Route::get('/register',"LoginController@getRegister");
+Route::post('/register',"LoginController@postRegister");
+
+
+// đây là trang chủ ông
+// lỗi 403 đấy của route thường là do đường dẫn trùng vs tên folder trong file public, lưu ý là đặt đường dẫn tránh trùng vs folder trong public, lỗi này nhiều ng hay gặp nên tôi làm cho ô xem
+// /home này này, nó trùng vs tên folder trong public
+
+
+// Route::get('/home',function ()
+// {
+// 	return redirect(route('home'));
+// 	// Forbidden
+// 	// You don't have permission to access this resource.
+// });
 
 // bây giờ tôi sẽ tạo ra 1 cái form để đăng kí tài khoản
-Route::get('/register',"LoginController@getRegister");
 // ông nên để đường dẫn mấy cái dduwwofng dẫn post form đơn giản chung đường dẫn get cho nó dễ
-Route::post('/register',"LoginController@postRegister");
+
 // x chua ong
 // toi ghi cmd sai nen no loi
 // toàn dùng group nên quên mất cách gọi này
@@ -32,7 +47,8 @@ Route::post('/register',"LoginController@postRegister");
 
 // ông khong hiểu đoạn nào để tôi giải thích, ông nói lại đi mic tự dưng bé
 // đây mới là admin
-Route::get('/admin',"TenDemoController@tenFunction")->middleware('vidu-middleware');
+
+
 
 // ở đây tôi gọi đến cái file controller có casiclass là TenDemoController bên trong file app/http/controller; sau đó gọi đến function có tên là tenFunction// ukm
 // Route::get('/home',function()
@@ -68,3 +84,13 @@ Route::get('/admin',"TenDemoController@tenFunction")->middleware('vidu-middlewar
 
 
 // ukm 
+
+
+
+
+
+
+
+Route::get('/kn_admin',"Admin\HomeController@index")->middleware('admin-only');
+
+

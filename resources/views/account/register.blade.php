@@ -13,7 +13,8 @@
 	<body>
 		<h1 style="text-align: center;">Đăng kí ở đây</h1>
 
-
+<!-- push r ông mạng lag quá không push lên nổi -->
+<!-- vẫn link cũ ông -->
 		<div class="container" style="text-align: center;"> <div class="row
 		justify-content-center"> <div class="col-md-12"> <div class="card"> 
 

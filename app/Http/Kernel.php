@@ -67,6 +67,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'vidu-middleware' => \App\Http\Middleware\ViduMiddleware::class,
+        'admin-only' => \App\Http\Middleware\AdminOnlyMiddleware::class,
 
         // cái này là tên mình đặt vidu-middleware, \App\Http\Middleware\ViduMiddleware::class là đường dẫn đến cái file middleware mình tạo, cái file nãy ý
 // đăng kí tên middleware mới gọi đến đc
