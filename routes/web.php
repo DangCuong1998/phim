@@ -21,6 +21,13 @@ Route::get('/',"HomeController@index")->name('home');
 Route::get('/login','LoginController@getLogin')->name('login');
 Route::get('/register',"LoginController@getRegister");
 Route::post('/register',"LoginController@postRegister");
+Route::get('/registertwo',"LoginControllertwo@getRegistertwo");
+Route::post('/registertwo',"LoginControllertwo@postRegistertwo");
+Route::get('/product',"ProductController@getProduct");
+Route::post('/productadd',"ProductController@postProductAdd");
+Route::post('/productupdate',"ProductController@postProductUpdate");
+Route::post('/productdelete',"ProductController@postProductDelete");
+
 
 
 // đây là trang chủ ông

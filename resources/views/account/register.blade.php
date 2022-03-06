@@ -19,14 +19,14 @@
 		justify-content-center"> <div class="col-md-12"> <div class="card"> 
 
 		                <div class="card-body">
-		                    <form method="POST" action="/register">
+		                    <form method="POST" action="/phim/public/register">
 		                    	<!-- vậy cái này để hôm sau đi -->
 		                    	<!-- uk -->
 		                    	<!-- ông còn sống k -->
 		                    	<!-- bài nay xong r ông, xong midd vs controller r -->
 
 		                    	<!-- trong form của laravel, cần có nhưng cái sau -->
-		                    	<!-- @csrf hoặc {{scrf_field()}}  -->
+		                    	<!--   -->
 		                    	<!-- cái này chức năng dùng để bảo mật chống tốn công  -->
 		                    	<!-- action="" là đường dẫn sẽ thực hiện truyền dữ liệu đến khi form này submit -->
 		                    	<!-- method là phương thức truyền, Route::get là cái choo0x get này này, 2 cái hay dùng nhất là get vs post, post thì không hiện trên thanh trình duyệt -->
