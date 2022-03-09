@@ -24,12 +24,14 @@ table, th, td {
 			</tr>
 		</thead>
 		<tbody>
+			@foreach($product as $pro)
 			<tr>
-				<td>1</td>
+				<td>{</td>
 				<td>Bánh kẹo</td>
 				<td>20000đ</td>
 				<td>6/3/2022</td>
 			</tr>
+			@endforeach
 			<tr>
 				<td>2</td>
 				<td>Socola</td>

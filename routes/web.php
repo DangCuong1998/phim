@@ -27,8 +27,14 @@ Route::get('/product',"ProductController@getProduct");
 Route::post('/productadd',"ProductController@postProductAdd");
 Route::post('/productupdate',"ProductController@postProductUpdate");
 Route::post('/productdelete',"ProductController@postProductDelete");
-
-
+Route::get('/productform',"ProductController@getproductform");
+Route::post('/productform',"ProductController@postproductform");
+Route::get('/productaddform',"ProductController@getproductaddform");
+Route::post('productaddform',"ProductController@postproductform");
+Route::get('/producteditform',"ProductController@getproducteditform");
+Route::post('/producteditform',"ProductController@postproducteditform");
+Route::get('/productdeleteform',"ProductController@getproductdeleteform");
+Route::post('/productdeleteform',"ProductController@postproductdeleteform");
 
 // đây là trang chủ ông
 // lỗi 403 đấy của route thường là do đường dẫn trùng vs tên folder trong file public, lưu ý là đặt đường dẫn tránh trùng vs folder trong public, lỗi này nhiều ng hay gặp nên tôi làm cho ô xem

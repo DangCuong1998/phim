@@ -26,4 +26,54 @@ class ProductController extends Controller
     	$update = Product::find('3');
     	$update->delete();
     }
+    public function getproductform(){
+    	return view("producttable.productform");
+    }
+    public function postproductform(request $request){
+    	$nameproduct = $request->nameproduct;
+    	$priceproduct = $request->priceproduct;
+    	$buyday = $request->buyday;
+    	$add = new Product;
+    	$add->NameProduct = $nameproduct;
+    	$add->PriceProduct = $priceproduct;
+    	$add->BuyDay = $buyday;
+    	$add->save();
+    }
+    public function getproductaddform(){
+    	return view("producttable.productadd");
+    }
+    public function postproductaddform(request $request){
+    	$nameproduct = $request->nameproduct;
+    	$priceproduct = $request->priceproduct;
+    	$buyday = $request->buyday;
+    	$add = new Product;
+    	$add->NameProduct = $nameproduct;
+    	$add->PriceProduct = $priceproduct;
+    	$add->BuyDay = $buyday;
+    	$add->save();
+    }
+    public function getproducteditform(){
+    	return view("producttable.productedit");
+    }
+    public function postproducteditform(request $request){
+    	$id  = $request->id;
+    	$nameproduct = $request->nameproduct;
+    	$priceproduct = $request->priceproduct;
+    	$buyday = $request->buyday;
+    	$edit = Product::find($id);
+    	$edit->id = $id;
+    	$edit->NameProduct = $nameproduct;
+    	$edit->PriceProduct = $priceproduct;
+    	$edit->BuyDay = $buyday;
+    	$edit->update();
+
+    }
+   public function getproductdeleteform(){
+   	return view("producttable.productdelete");
+   }
+   public function postproductdeleteform(request $request){
+   	$id = $request->id;
+   	$delete = Product::find($id);
+   	$delete ->delete();
+   }
 }
